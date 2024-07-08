@@ -1,0 +1,99 @@
+/* src/components/Header.scss */
+.header {
+    &__opacity-wrap{
+        position: relative;
+        background-color: black;
+        opacity: .5;
+        z-index: 2;
+    }
+    &__wrapper{
+        position: relative;
+        background-image: url('../../assets/images/TriPride2023-0209.jpg');
+        background-size: 110%;
+        background-position: 0 -1.5rem;
+        height: 12rem;
+        z-index: 1;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-right: .4063rem;
+  
+    &__logo img {
+      max-height: 2.5rem;
+    }
+  
+    &__menu-icon {
+      cursor: pointer;
+      display: none;
+      max-height: 2.5rem;
+
+    }
+  
+    &__nav {
+      display: none;
+  
+      &--open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+    }
+  
+    &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      &-item {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+  
+        .header__link {
+          text-decoration: none;
+          color: black;
+  
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .header {
+      &__menu-icon {
+        display: none;
+      }
+  
+      &__nav {
+        display: flex;
+      }
+  
+      &__list {
+        display: flex;
+  
+        &-item {
+          padding: 0 10px;
+          border: none;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .header {
+      &__menu-icon {
+        display: block;
+      }
+    }
+  }
+  
