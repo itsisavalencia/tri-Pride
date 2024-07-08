@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header__opacity-wrap">
+
     <div className="header__wrapper">
       <header className="header">
         <Link to="/home" className="header__logo">
@@ -88,7 +88,7 @@ const Header = () => {
       </header>
       <hr className="divider" />
     </div>
-    </div>
+
   );
 };
 
