@@ -1,3 +1,63 @@
 @use "../../styles/partials/globals" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.footer {
+  background-color: $black;
+  padding: 1rem;
+  color: $white;
+
+  &__vertical-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__horizontal-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    max-height: 50px;
+  }
+
+  &__sm {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-icon {
+      max-height: 25px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .footer__contact {
+      color: $white;
+      text-decoration: none;
+      width: 40%;
+      text-align: center;
+      font-size: 0.75rem;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 1rem;
+    font-size: .875rem;
+
+    @include tablet {
+      margin-top: -2rem;
+      padding-bottom: 1rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
