@@ -2,6 +2,10 @@
 @use "../partials/variables" as *;
 @use "../partials/mixins" as *;
 
+html, body{
+    height: 100%;
+    background-color: $black;
+}
 * {
   margin: 0;
   padding: 0;
