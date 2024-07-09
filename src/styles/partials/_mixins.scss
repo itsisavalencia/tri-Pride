@@ -1,0 +1,33 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin base-btn($bg, $color){
+  cursor: pointer;
+  padding: .5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.5 ease-in-out;
+  background-color: $bg;
+  color: $color;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $purple;
+    color: $white;
+  }
+}
