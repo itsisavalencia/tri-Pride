@@ -4,17 +4,23 @@
 
 .board-of-directors {
     padding: 1rem;
+    background-color: $white;
+    position: relative;
+    top: -5.25rem;
   
     &__title {
       text-align: center;
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      font-weight: 600;
+      
     }
   
     &__grid {
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1rem;
-      grid-template-columns: 1fr;
     }
   
     &__card {
@@ -23,11 +29,22 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       text-align: center;
+      width: 45%;
     }
-  
+    
+    &__photo-container {
+        display: flex;
+        width: 120px; /* Adjust as needed */
+        height: 120px; /* Adjust as needed */
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
     &__photo {
       width: 100%;
       height: auto;
+      align-self: center;
     }
   
     &__info {
@@ -35,18 +52,29 @@
     }
   
     &__name {
-      font-size: 1.25rem;
       margin: 0.5rem 0;
+      font-size: .875rem;
+      font-weight: 600;
+      @include tablet{
+          font-size: 1.25rem;
+      }
     }
   
     &__role {
-      font-size: 1rem;
+
       margin: 0.25rem 0;
+      font-size: .75rem;
+        @include tablet{
+            font-size: .875rem;
+        }
     }
-  
+    
     &__pronouns {
-      font-size: 0.875rem;
-      color: $brown;
+        color: $brown;
+        font-size: .75rem;
+          @include tablet{
+              font-size: .875rem;
+          }
     }
   }
   
