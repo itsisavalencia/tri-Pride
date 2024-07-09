@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Events from "./pages/Events";
 import GetInvolved from "./pages/GetInvolved";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/get-involved" element={<GetInvolved />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
