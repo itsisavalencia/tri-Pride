@@ -1,0 +1,58 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.board-of-directors {
+    padding: 1rem;
+  
+    &__title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    &__grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+  
+    &__card {
+      background-color: $white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+  
+    &__photo {
+      width: 100%;
+      height: auto;
+    }
+  
+    &__info {
+      padding: 1rem;
+    }
+  
+    &__name {
+      font-size: 1.25rem;
+      margin: 0.5rem 0;
+    }
+  
+    &__role {
+      font-size: 1rem;
+      margin: 0.25rem 0;
+    }
+  
+    &__pronouns {
+      font-size: 0.875rem;
+      color: $brown;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .board-of-directors__grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  

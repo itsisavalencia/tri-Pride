@@ -1,6 +1,12 @@
+import BoardOfDirectors from "../components/BoardOfDirectors/BoardOfDirectors"
+import MissionVission from "../components/MissionVission/MissionVission"
+
 const About = () => {
   return (
-    <div>About</div>
+    <main className="about">
+      <BoardOfDirectors/>
+      <MissionVission/>
+    </main>
   )
 }
 
