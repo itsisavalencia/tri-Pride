@@ -1,0 +1,36 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 76px;
+  height: 132px;
+  padding: 0 1rem;
+  width: 100%;
+  @include tablet {
+      top: 92px;
+      height: 292px;
+      width: 100%;
+      padding: 0 1.5rem;
+  }
+  &__title {
+    width: 60%;
+    font-size: 1rem;
+    font-weight: 700;
+    @include tablet{
+        font-size: 2rem
+    }
+  }
+  &__button {
+    @include base-btn($white, $black);
+    font-size: 0.75rem;
+    @include tablet {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+  }
+}

@@ -6,6 +6,9 @@
   background-color: $black;
   padding: 1rem;
   color: $white;
+  @include tablet{
+    padding: 1.5rem;
+  }
 
   &__vertical-wrap {
     display: flex;
