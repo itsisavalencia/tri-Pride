@@ -1,0 +1,42 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.banner {
+  background-color: $white;
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 1px $black solid;
+
+  &__track {
+    display: flex;
+    align-items: center;
+    animation: scroll 20s linear infinite;
+    @include tablet {
+      animation: scroll 30s linear infinite;
+    }
+  }
+
+  &__logo-link {
+    display: inline-block;
+    margin: 0 1rem;
+    flex: 0 0 auto;
+  }
+
+  &__logo {
+    max-height: 3rem;
+    @include tablet {
+      max-height: 4rem;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
