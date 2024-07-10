@@ -8,13 +8,7 @@
   position: relative;
 
   &__title {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    @include tablet {
-      font-size: 1.25rem;
-    }
+    @include title($black)
   }
 
   &__grid {

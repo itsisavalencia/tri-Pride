@@ -31,3 +31,24 @@
     color: $white;
   }
 }
+
+@mixin title($color){
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: $color;
+    @include tablet {
+      font-size: 1.25rem;
+    }
+}
+
+@mixin subtitle($color){
+  color: $color;
+        font-weight: 600;
+        text-align: center;
+        font-size: .875rem;
+        @include tablet{
+            font-size: 1.25rem;
+        }
+}

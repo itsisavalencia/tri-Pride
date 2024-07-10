@@ -1,6 +1,10 @@
+import EventList from "../components/EventList/EventList"
+
 const Events = () => {
   return (
-    <div>Events</div>
+    <section className="events">
+      <EventList/>
+    </section>
   )
 }
 
