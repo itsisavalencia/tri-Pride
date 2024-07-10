@@ -24,8 +24,12 @@ const Modal = ({ member, onClose }) => {
               )}
             </div>
         <h3 className="modal__name">{member.name}</h3>
-        <p className="modal__role">{member.role}</p>
-        <p className="modal__pronouns">{member.pronouns}</p>
+        <p className="board-of-directors__role">
+                {member.role}{" "}
+                <span className="board-of-directors__pronouns">
+                  ({member.pronouns})
+                </span>
+              </p>
         <p className="modal__description">{member.description}</p>
       </div>
     </div>
