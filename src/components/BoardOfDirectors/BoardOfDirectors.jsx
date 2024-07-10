@@ -32,7 +32,6 @@ const BoardOfDirectors = () => {
 
   return (
     <section className="board-of-directors">
-      <h2 className="about-us">ABOUT US</h2>
       <h2 className="board-of-directors__title">Meet Our Team</h2>
       <div className="board-of-directors__grid">
         {boardMembers.map((member) => (
