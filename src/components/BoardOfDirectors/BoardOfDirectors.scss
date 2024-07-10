@@ -2,11 +2,18 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.about-us{
+  position: absolute;
+  top: -2rem;
+  color: $white;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
 .board-of-directors {
     padding: 1rem;
     background-color: $white;
     position: relative;
-    // top: -5.25rem;
+    top: -5.25rem;
   
     &__title {
       text-align: center;

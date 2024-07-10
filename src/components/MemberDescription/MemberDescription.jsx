@@ -1,4 +1,5 @@
 import './MemberDescription.scss';
+import placeholderImage from "../../assets/images/placeholderPhoto.jpg";
 
 const Modal = ({ member, onClose }) => {
   if (!member) return null;
@@ -7,11 +8,21 @@ const Modal = ({ member, onClose }) => {
     <div className="modal">
       <div className="modal__content">
         <button className="modal__close" onClick={onClose}>X</button>
-        <img
-          src={member.photo}
-          alt={`${member.name}'s photo`}
-          className="modal__photo"
-        />
+        <div className="board-of-directors__photo-container">
+              {member.photo ? (
+                <img
+                  src={member.photo}
+                  alt={`${member.name}'s photo`}
+                  className="board-of-directors__photo"
+                />
+              ) : (
+                <img
+                  src={placeholderImage}
+                  alt="placeholder"
+                  className="board-of-directors__photo"
+                />
+              )}
+            </div>
         <h3 className="modal__name">{member.name}</h3>
         <p className="modal__role">{member.role}</p>
         <p className="modal__pronouns">{member.pronouns}</p>
