@@ -4,40 +4,46 @@
 
 .header {
   &__wrapper {
+    &--home{
+      position: relative;
+      background-image: url("../../assets/images/TriPride2023-0209.jpg");
+      background-size: 110%;
+      background-repeat: no-repeat;
+      background-position: 0 -1.5rem;
+      height: 13rem;
+      @include tablet {
+        height: 24rem;
+        background-position: 0 -8.5rem;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+    }
+    &--other{
+      background-image: none;
+      height: auto;
+    }
+  }
     position: relative;
-    background-image: url("../../assets/images/TriPride2023-0209.jpg");
-    background-size: 110%;
-    background-repeat: no-repeat;
-    background-position: 0 -1.5rem;
-    height: 13rem;
-    @include tablet {
-      height: 24rem;
-      background-position: 0 -8.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-right: 0.4063rem;
+    z-index: 1;
+  
+    @include tablet{
+      padding: 1.5rem;
     }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $black;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-  }
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  padding-right: 0.4063rem;
-  z-index: 1;
-
-  @include tablet{
-    padding: 1.5rem;
-    
-  }
+  
 
   &__logo img {
     max-height: 2.5rem;
