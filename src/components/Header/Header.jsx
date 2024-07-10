@@ -10,6 +10,8 @@ const Header = () => {
   const location = useLocation();
   const navRef = useRef(null);
 
+  const isHomePage = location.pathname === '/';
+
   const toggleNav = () => {
     setNavOpen(!navOpen);
   };
@@ -34,9 +36,9 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header__wrapper">
+    <div className={`header__wrapper ${isHomePage ? 'header__wrapper--home' : 'header__wrapper--other'}`}>
       <header className="header">
-        <Link to="/home" className="header__logo">
+        <Link to="/" className="header__logo">
           <img src={logo} alt="tri-Pride Logo" />
         </Link>
         {isMobile ? (
@@ -49,9 +51,9 @@ const Header = () => {
         ) : (
           <nav className="header__nav">
             <ul className="header__list">
-              {location.pathname !== "/home" && (
+              {location.pathname !== "/" && (
                 <li className="header__list-item">
-                  <Link to="/home" className="header__link">
+                  <Link to="/" className="header__link">
                     HOME
                   </Link>
                 </li>
@@ -86,9 +88,9 @@ const Header = () => {
             className={`header__nav ${navOpen ? "header__nav--open" : ""}`}
           >
             <ul className="header__list">
-              {location.pathname !== "/home" && (
+              {location.pathname !== "/" && (
                 <li className="header__list-item">
-                  <Link to="/home" onClick={toggleNav} className="header__link">
+                  <Link to="/" onClick={toggleNav} className="header__link">
                     HOME
                   </Link>
                 </li>
