@@ -1,6 +1,10 @@
+import GetInvolvedForm from "../components/GetInvolvedForm/GetInvolvedForm"
+
 const GetInvolved = () => {
   return (
-    <div>GetInvolved</div>
+    <section>
+      <GetInvolvedForm/>
+    </section>
   )
 }
 
