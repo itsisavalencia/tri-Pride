@@ -102,6 +102,10 @@
         &:hover {
           color: $purple;
         }
+        &--active {
+          color: $purple;
+          font-weight: 600;
+        }
       }
     }
   }

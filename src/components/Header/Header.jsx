@@ -10,7 +10,7 @@ const Header = () => {
   const location = useLocation();
   const navRef = useRef(null);
 
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
@@ -36,7 +36,11 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={`header__wrapper ${isHomePage ? 'header__wrapper--home' : 'header__wrapper--other'}`}>
+    <div
+      className={`header__wrapper ${
+        isHomePage ? "header__wrapper--home" : "header__wrapper--other"
+      }`}
+    >
       <header className="header">
         <Link to="/" className="header__logo">
           <img src={logo} alt="tri-Pride Logo" />
@@ -51,34 +55,53 @@ const Header = () => {
         ) : (
           <nav className="header__nav">
             <ul className="header__list">
-              {location.pathname !== "/" && (
-                <li className="header__list-item">
-                  <Link to="/" className="header__link">
-                    HOME
-                  </Link>
-                </li>
-              )}
-              {location.pathname !== "/about" && (
-                <li className="header__list-item">
-                  <Link to="/about" className="header__link">
-                    ABOUT US
-                  </Link>
-                </li>
-              )}
-              {location.pathname !== "/events" && (
-                <li className="header__list-item">
-                  <Link to="/events" className="header__link">
-                    EVENTS
-                  </Link>
-                </li>
-              )}
-              {location.pathname !== "/get-involved" && (
-                <li className="header__list-item">
-                  <Link to="/get-involved" className="header__link">
-                    GET INVOLVED
-                  </Link>
-                </li>
-              )}
+              <li className="header__list-item">
+                <Link
+                  to="/"
+                  className={`header__link ${
+                    location.pathname === "/" ? "header__link--active" : ""
+                  }`}
+                >
+                  HOME
+                </Link>
+              </li>
+
+              <li className="header__list-item">
+                <Link
+                  to="/about"
+                  className={`header__link ${
+                    location.pathname === "/about" ? "header__link--active" : ""
+                  }`}
+                >
+                  ABOUT US
+                </Link>
+              </li>
+
+              <li className="header__list-item">
+                <Link
+                  to="/events"
+                  className={`header__link ${
+                    location.pathname === "/events"
+                      ? "header__link--active"
+                      : ""
+                  }`}
+                >
+                  EVENTS
+                </Link>
+              </li>
+
+              <li className="header__list-item">
+                <Link
+                  to="/get-involved"
+                  className={`header__link ${
+                    location.pathname === "/get-involved"
+                      ? "header__link--active"
+                      : ""
+                  }`}
+                >
+                  GET INVOLVED
+                </Link>
+              </li>
             </ul>
           </nav>
         )}
