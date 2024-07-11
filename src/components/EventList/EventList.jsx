@@ -46,8 +46,9 @@ const EventList = () => {
   Modal.setAppElement("#root");
 
   return (
-    <section className="event-list">
+    <>
       <h2 className="event-list__title">EVENTS</h2>
+    <section className="event-list">
       {nextEvent && (
         <div className="event-list__next-event">
           <h3 className="event-list__subtitle">Next Event</h3>
@@ -63,8 +64,8 @@ const EventList = () => {
           </div>
         </div>
       )}
-      <div className="event-list__other-events">
         <h3 className="event-list__subtitle">Other Events</h3>
+      <div className="event-list__other-events">
         {otherEvents.map((event) => (
           <div
             key={event.name}
@@ -87,17 +88,25 @@ const EventList = () => {
           contentLabel="Event Details"
           className="event-list__modal"
           overlayClassName="event-list__overlay"
-        >
+          >
           <div
             className="event-list__modal-background"
+            style={{ backgroundImage: `url(${selectedEvent.bgimage})` }}
           >
             <button onClick={closeModal} className="event-list__modal-close">
               &times;
             </button>
             <div className="event-list__modal-content">
               <h2 className="event-list__modal-title">{selectedEvent.name}</h2>
-              <p className="event-list__modal-date">{selectedEvent.date}</p>
-              <p className="event-list__modal-venue">{selectedEvent.venue}</p>
+              {selectedEvent.date ? (
+                <p className="event-list__modal-date">{selectedEvent.date}</p>
+              ) : (<p className="event-list__modal-date">Date TBD</p>)}
+              {selectedEvent.time ? (
+                <p className="event-list__modal-time">{selectedEvent.time}</p>
+              ) : (<p className="event-list__modal-time">Time TBD</p>)}
+              {selectedEvent.venue ? (
+                <p className="event-list__modal-venue">{selectedEvent.venue}</p>
+              ) : (<p className="event-list__modal-venue">Venue TBD</p>)}
               <p className="event-list__modal-location">
                 {selectedEvent.location}
               </p>
@@ -109,6 +118,7 @@ const EventList = () => {
         </Modal>
       )}
     </section>
+    </>
   );
 };
 
