@@ -6,6 +6,7 @@ import Events from "./pages/Events";
 import GetInvolved from "./pages/GetInvolved";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
         <Route path="/get-involved" element={<GetInvolved />} />
+        <Route path="/contact" element={<ContactUs/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
