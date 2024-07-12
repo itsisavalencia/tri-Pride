@@ -26,6 +26,7 @@
     }
   }
   &__button {
+    text-decoration: none;
     @include base-btn($white, $black);
     font-size: 0.75rem;
     @include tablet {
