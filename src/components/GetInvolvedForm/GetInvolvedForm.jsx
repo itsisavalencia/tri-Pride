@@ -3,11 +3,11 @@ import './GetInvolvedForm.scss';
 
 const GetInvolvedForm = () => {
   const [result, setResult] = useState("");
-  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY;
+  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_VOLUNTEER;
 
   const validateForm = (formData) => {
     if (formData.get("over18") === "No") {
-      setResult("Sorry, you must be over 18 to volunteer with us. We hope you reach out again in the future.");
+      setResult("Sorry, you must be over 18 to volunteer with us. We hope you reach out again in the future!");
       return false;
     }
     return true;
@@ -48,22 +48,31 @@ const GetInvolvedForm = () => {
       <h2 className="get-involved__title">Want to become a volunteer?</h2>
       <p className="get-involved__description">You can add your name to the volunteer callout list here!</p>
       <form className="get-involved__form" onSubmit={onSubmit}>
+        <div className="get-involved__group">
         <label className="get-involved__label">
           NAME
         </label>
           <input className="get-involved__input" type="text" name="name" placeholder="John Doe" required />
+          </div>
+          <div className="get-involved__group">
         <label className="get-involved__label">
           PRONOUNS
         </label>
           <input className="get-involved__input" type="text" name="pronouns" placeholder="they/them" required />
+          </div>
+          <div className="get-involved__group">
         <label className="get-involved__label">
           EMAIL
         </label>
           <input className="get-involved__input" type="email" name="email" placeholder="example@example.com" required />
+          </div>
+          <div className="get-involved__group">
         <label className="get-involved__label">
           PREFERRED EVENT
         </label>
           <input className="get-involved__input" type="text" name="preferredEvent" placeholder="PRIDEtoberfest" required />
+          </div>
+          <div className="get-involved__group">
         <label className="get-involved__label">
           SMART SERVE CERTIFIED
           <div className="get-involved__radio-group">
@@ -75,6 +84,8 @@ const GetInvolvedForm = () => {
             </label>
           </div>
         </label>
+        </div>
+          <div className="get-involved__group">
         <label className="get-involved__label">
           OVER THE AGE OF 18?
           <div className="get-involved__radio-group">
@@ -86,6 +97,7 @@ const GetInvolvedForm = () => {
             </label>
           </div>
         </label>
+        </div>
         <button className="get-involved__submit" type="submit">SUBMIT</button>
       </form>
       <span className="get-involved__result">{result}</span>

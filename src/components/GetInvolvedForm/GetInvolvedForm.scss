@@ -12,13 +12,23 @@
     @include title($black);
   }
 
-  &__description {
-  }
 
   &__form {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    @include tablet{
+        flex-direction: row;
+        flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  &__group{
+    @include tablet{
+        width: 45%;
+    }
   }
 
   &__label {
@@ -26,6 +36,7 @@
     text-align: left;
     font-size: 0.75rem;
     font-weight: 600;
+    display: block;
   }
 
   &__input{
@@ -34,9 +45,17 @@
       border: 1px solid $brown;
       border-radius: 0.25rem;
       margin: 0.2rem 0 0.5REM;
+
+      &:focus-visible{
+        outline: none;
+        border: $purple solid 2px; 
+      }
   }
   &__submit {
-    @include base-btn($purple, $white)
+    @include base-btn($purple, $white);
+    @include tablet{
+
+    }
   }
 
   &__radio-group {
@@ -67,36 +86,6 @@
   }
 
   &__result {
-    margin-top: 1rem;
     display: block;
-  }
-
-  @include tablet {
-    &__form {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      &__label {
-        max-width: 45%;
-        margin: 0.5rem;
-      }
-
-      &__input,
-      &__submit {
-        width: 100%;
-        margin: 0.5rem 0;
-      }
-
-      &__radio-group {
-        flex-basis: 100%;
-        justify-content: center;
-        margin: 1rem 0;
-
-        &__radio-label {
-          margin: 0 1rem;
-        }
-      }
-    }
   }
 }
