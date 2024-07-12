@@ -29,6 +29,10 @@
     @include tablet{
       width: 25%;
     }
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   &__photo-container {
@@ -68,7 +72,7 @@
   }
 
   &__pronouns {
-    color: $brown;
+    color: $purple;
     font-size: 0.75rem;
     @include tablet {
       font-size: 0.875rem;

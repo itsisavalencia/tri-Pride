@@ -15,7 +15,7 @@
   z-index: 1000;
 
   &__content {
-    overflow: scroll;
+    overflow: hidden;
     background-color: $white;
     padding: 2rem;
     position: relative;
