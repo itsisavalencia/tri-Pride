@@ -5,6 +5,8 @@ tri-Pride
 
 This app is for my local pride organization, tri-Pride. It will enhance their online presence and serve as a central hub for tracking the most up-to-date information on their history, board of directors, and events.
 
+**Please see the end of this README.md for [setup instructions](#setup-instructions) on how to navigate the website and set up the repo.**
+
 ### Problem
 
 tri-Pride previously had an outdated and non-functional website. With their recent rebranding and significant growth in 2022-2023, there was an urgent need for a modern, reliable website. Over the past year, tri-Pride’s Board of Directors, volunteers, and partners have witnessed increased community attendance at events and heightened awareness, support, and presence within the Region of Waterloo. To reflect and support this growth, a new, dynamic website was essential to effectively communicate tri-Pride's mission and activities.
@@ -44,6 +46,7 @@ As a board member, I want to manage the content on the website to keep it curren
 - React
 - JavaScript
 - Express
+- Web3Forms
 - Client libraries:
     - react
     - react-router
@@ -115,7 +118,7 @@ Example response:
 ]
 ```
 
-**GET /events/:id**
+**GET /events/:id** (not needed until nice-to-have implementation)
 
 - Retrieve details of a specific event.
 
@@ -128,6 +131,7 @@ Example response:
     "location": "Kitchener, ON",
     "description": "Annual pride parade celebrating diversity and inclusivity.",
     "photo": "path/to/photo.jpg"
+    "photos": "Link to photos OR array of photos"
 }
 ```
 
@@ -157,7 +161,7 @@ Example response:
 ]
 ```
 
-**GET /board/:id**
+**GET /board/:id** (not needed until nice-to-have implementation)
 
 - Retrieve details of a specific board member.
 
@@ -223,3 +227,33 @@ Login functionality for board members will be implemented as a nice-to-have feat
 - Ways to Get Involved Page
 - **POST, PUT, DELETE** /events & /board
 - Auth for board members
+
+## Setup Instructions
+### Server Setup
+Before running the client application, ensure the server is set up and running. Follow the instructions in the tri-pride-server Repository to set up and start the server (https://github.com/itsisavalencia/tri-pride-server).
+
+### Environment Variables
+Create a `.env` file in the root directory of the project and add the following environment variables:
+
+```env
+VITE_API_URL="http://localhost:8080"
+VITE_EMAIL_ACCESS_KEY_DEMO="44700e12-5f6a-4d16-b336-8ed067baacd1"
+```
+Note: You can obtain your own access key by entering your email at Web3Forms: https://web3forms.com/#start. By using your own key you can receive the test emails, or use the demo access key included
+
+
+### Installation
+Clone the repository:
+```
+git clone https://github.com/itsisavalencia/tri-pride.git
+cd tri-pride
+```
+Install the dependencies:
+```
+npm install
+```
+Start the development server:
+```
+npm run dev
+```
+The application should now be running at http://localhost:5173.
