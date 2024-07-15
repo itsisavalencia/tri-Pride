@@ -3,7 +3,7 @@ import "./GetInvolvedForm.scss";
 
 const GetInvolvedForm = () => {
   const [result, setResult] = useState("");
-  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_VOLUNTEER;
+  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_DEMO;
 
   const validateForm = (formData) => {
     if (formData.get("over18") === "No") {
@@ -152,7 +152,12 @@ const GetInvolvedForm = () => {
             </div>
           </label>
         </div>
-        <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+        <input
+          type="checkbox"
+          name="botcheck"
+          className="hidden"
+          style={{ display: "none" }}
+        />
         <button className="get-involved__submit" type="submit">
           SUBMIT
         </button>

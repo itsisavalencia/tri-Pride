@@ -5,7 +5,7 @@ import email from "../../assets/icons/email.png";
 
 const ContactUsForm = () => {
   const [result, setResult] = useState("");
-  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_INFO;
+  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_DEMO;
 
   const validateForm = (formData) => {
     if (formData.get("botcheck")) {
