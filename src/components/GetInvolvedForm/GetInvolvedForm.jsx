@@ -3,7 +3,7 @@ import "./GetInvolvedForm.scss";
 
 const GetInvolvedForm = () => {
   const [result, setResult] = useState("");
-  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_DEMO;
+  const emailAccessKey = import.meta.env.VITE_EMAIL_ACCESS_KEY_VOLUNTEER;
 
   const validateForm = (formData) => {
     if (formData.get("over18") === "No") {
